@@ -1,18 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import MyComponent from "./MyComponent";
 
-function App(){
-  const name="리엑트";
+const App = () => {
+  return <MyComponent>칠드런</MyComponent>;
+};
 
-  return(
-    <div className="react">{name}
-      {/*주석입니다*/}
-      
-      //주석임
-    </div>
-  )
-}
-
-
-
-export default App
+export default App;
