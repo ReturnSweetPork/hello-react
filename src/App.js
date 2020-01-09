@@ -1,12 +1,8 @@
 import React from "react";
-import MyComponent from "./MyComponent";
+import Say from "./Say";
 
 const App = () => {
-  return (
-    <MyComponent name="안현상" favoriteNumber={77}>
-      칠드런
-    </MyComponent>
-  );
+  return <Say />;
 };
 
 export default App;
