@@ -1,14 +1,24 @@
 import React, { useState } from "react";
 
 const EventPractice = () => {
-  const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
-  const onchangeUsername = e => setUsername(e.target.value);
-  const onChangeMessage = e => setMessage(e.target.value);
+  const [form, setForm] = useState({
+    username: "",
+    message: ""
+  });
+  const { username, message } = form;
+  const onChange = e => {
+    const nextForm = {
+      ...form, //기존폼을 이 자리에 복사한 뒤
+      [e.target.name]: e.target.value //원하는 값을 덮어 씌워주기
+    };
+    setForm(nextForm);
+  };
   const onClick = () => {
     alert(username + ": " + message);
-    setUsername("");
-    setMessage("");
+    setForm({
+      username: "",
+      message: ""
+    });
   };
   const onKeyPress = e => {
     if (e.key === "Enter") {
@@ -23,14 +33,14 @@ const EventPractice = () => {
         name="username"
         placeholder="이름"
         value={username}
-        onChange={onchangeUsername}
+        onChange={onChange}
       />
       <input
         type="text"
         name="message"
         placeholder="메세지"
         value={message}
-        onChange={onChangeMessage}
+        onChange={onChange}
         onKeyPress={onKeyPress}
       />
       <button onClick={onClick}>버튼</button>
