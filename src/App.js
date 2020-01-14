@@ -1,8 +1,8 @@
 import React from "react";
-import VaildationSample from "./VaildationSample";
+import IterationSample from "./IterationSample";
 
 const App = () => {
-  return <VaildationSample />;
+  return <IterationSample />;
 };
 
 export default App;
